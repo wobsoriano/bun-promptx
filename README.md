@@ -1,19 +1,32 @@
-# bun starter
+# promptx
 
-## Getting Started
+promptx is a terminal prompt library based on [bubbles](https://github.com/mritd/bubbles) via `bun:ffi`.
 
-Click the [Use this template](https://github.com/wobsoriano/bun-lib-starter/generate) button to create a new repository with the contents starter.
+## Install
 
-OR
+```bash
+bun add promptx
+```
 
-Run `bun create wobsoriano/bun-lib-starter ./my-lib`.
+## Usage
 
-## Features
+```js
+import { createSelection } from 'promptx'
 
-- [bun](https://github.com/oven-sh/bun) as package manager and task runner
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Release with [bumpp](https://github.com/antfu/bumpp)
-- Beautiful changelogs with [changelogithub](https://github.com/antfu/changelogithub)
+const result = createSelection([
+  { text: 'feat', description: 'Introducing new features' },
+  { text: 'fix', description: 'Bug fix' },
+  { text: 'docs', description: 'Writing docs' },
+  { text: 'style', description: 'Improving structure/format of the code' },
+  { text: 'refactor', description: 'Refactoring code' }
+], {
+  headerText: 'Select Commit Type: ',
+  perPage: 5
+})
+
+console.log(result)
+// { selectedIndex: 2, error: null }
+```
 
 ## License
 
