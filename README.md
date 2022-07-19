@@ -15,7 +15,7 @@ bun add promptx
 A terminal single-selection list library. The `createSelection` function provides the functions of page up and down and key movement, and supports custom rendering methods.
 
 ```js
-import { createSelection } from 'promptx'
+import { createSelection } from 'bun-promptx'
 
 const result = createSelection([
   { text: 'feat', description: 'Introducing new features' },
