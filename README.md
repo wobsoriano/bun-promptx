@@ -28,6 +28,8 @@ console.log(result)
 // { selectedIndex: 2, error: null }
 ```
 
+<img src="https://i.imgur.com/yt14nS4.gif" alt="promptx demo" />
+
 ## License
 
 MIT
