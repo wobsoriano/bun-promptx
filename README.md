@@ -1,6 +1,6 @@
-# promptx
+# bun-promptx
 
-promptx is a terminal prompt library based on [bubbles](https://github.com/mritd/bubbles) via `bun:ffi`.
+bun-promptx is a terminal prompt library based on [bubbles](https://github.com/mritd/bubbles) via `bun:ffi`.
 
 ## Install
 

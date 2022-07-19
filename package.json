@@ -1,5 +1,5 @@
 {
-  "name": "promptx",
+  "name": "bun-promptx",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,12 +27,12 @@
     "bun"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/promptx#readme",
+  "homepage": "https://github.com/wobsoriano/bun-promptx#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/promptx.git"
+    "url": "git+https://github.com/wobsoriano/bun-promptx.git"
   },
-  "bugs": "https://github.com/wobsoriano/promptx/issues",
+  "bugs": "https://github.com/wobsoriano/bun-promptx/issues",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "devDependencies": {
     "bun-types": "^0.1.4",
