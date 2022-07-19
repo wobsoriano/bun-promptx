@@ -5,7 +5,7 @@ bun-promptx is a terminal prompt library based on [bubbles](https://github.com/m
 ## Install
 
 ```bash
-bun add promptx
+bun add bun-promptx
 ```
 
 ## Usage
