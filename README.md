@@ -10,6 +10,8 @@ bun add promptx
 
 ## Usage
 
+### selection
+
 ```js
 import { createSelection } from 'promptx'
 
@@ -29,6 +31,8 @@ console.log(result)
 ```
 
 <img src="https://i.imgur.com/yt14nS4.gif" alt="promptx demo" />
+
+More to come...
 
 ## License
 
