@@ -22,7 +22,10 @@ const result = createSelection([
   { text: 'fix', description: 'Bug fix' },
   { text: 'docs', description: 'Writing docs' },
   { text: 'style', description: 'Improving structure/format of the code' },
-  { text: 'refactor', description: 'Refactoring code' }
+  { text: 'refactor', description: 'Refactoring code' },
+  { text: 'test', description: 'Refactoring code' },
+  { text: 'chore', description: 'When adding missing tests' },
+  { text: 'perf', description: 'Improving performance' }
 ], {
   headerText: 'Select Commit Type: ',
   perPage: 5
@@ -32,7 +35,7 @@ console.log(result)
 // { selectedIndex: 2, error: null }
 ```
 
-<img src="https://i.imgur.com/yt14nS4.gif" alt="promptx demo" />
+<img src="https://i.imgur.com/DeTHCdG.gif" alt="promptx demo" />
 
 More to come...
 
