@@ -1,7 +1,8 @@
-import { dlopen, FFIType, ptr } from 'bun:ffi'
+import { dlopen, FFIType, ptr, suffix } from 'bun:ffi'
 import { encode, toString } from './utils'
 
-const location = new URL(`../release/${process.platform}-${process.arch}`, import.meta.url).pathname
+const filename = `../release/promptx-${process.platform}-${process.arch}.${suffix}`
+const location = new URL(filename, import.meta.url).pathname
 export const { symbols } = dlopen(location, {
   CreateSelection: {
     args: [FFIType.ptr, FFIType.ptr, FFIType.int],
