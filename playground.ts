@@ -1,5 +1,13 @@
 import { createSelection, createPrompt } from './src'
 
+const username = createPrompt("Enter username: ")
+console.log(username.value)
+
+const password = createPrompt("Enter password: ", {
+  echoMode: 'password'
+})
+console.log(password.value)
+
 const result = createSelection([
   { text: 'feat', description: 'Introducing new features' },
   { text: 'fix', description: 'Bug fix' },
@@ -14,14 +22,4 @@ const result = createSelection([
   perPage: 5,
   footerText: 'Footer here'
 })
-
 console.log(result)
-// const username = createPrompt("Enter username: ")
-// // { value: "wobsoriano", error: null }
-
-// const password = createPrompt("Enter password: ", {
-//   echoMode: 'password'
-// })
-// // { value: "123456", error: null }
-
-// console.log(username, password)
