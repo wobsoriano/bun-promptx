@@ -8,7 +8,12 @@ export type PromptOptions = {
   echoMode?: 'normal' | 'password' | 'none'
 }
 
-export function createPrompt(prompt: string, options: PromptOptions = {}) {
+export type PromptResult = {
+  value: string | null
+  error: string | null
+}
+
+export function createPrompt(prompt: string, options: PromptOptions = {}): PromptResult {
   const returnedPtr = symbols.CreatePrompt(
     ptr(encode(prompt)),
     ptr(encode(options.echoMode || 'normal')),
