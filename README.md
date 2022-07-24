@@ -53,6 +53,8 @@ const password = createPrompt("Enter password: ", {
 // { value: "123456", error: null }
 ```
 
+<img src="https://i.imgur.com/wx6BTUm.gif" alt="promptx demo" />
+
 ## License
 
 MIT
