@@ -36,7 +36,7 @@ console.log(result)
 // { selectedIndex: 2, error: null }
 ```
 
-<img src="https://i.imgur.com/yE0qKyA.gif" alt="promptx demo" />
+<img src="https://i.imgur.com/yE0qKyA.gif" alt="promptx demo" width="500" />
 
 ### createPrompt
 
@@ -54,7 +54,7 @@ const password = createPrompt("Enter password: ", {
 // { value: "123456", error: null }
 ```
 
-<img src="https://i.imgur.com/wx6BTUm.gif" alt="promptx demo" />
+<img src="https://i.imgur.com/wx6BTUm.gif" alt="promptx demo" width="500" />
 
 ## License
 
