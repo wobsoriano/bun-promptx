@@ -17,7 +17,7 @@ export const { symbols } = dlopen(location, {
     returns: FFIType.ptr
   },
   CreatePrompt: {
-    args: [FFIType.ptr, FFIType.ptr, FFIType.bool, FFIType.int],
+    args: [FFIType.ptr, FFIType.ptr, FFIType.ptr, FFIType.ptr, FFIType.bool, FFIType.int],
     returns: FFIType.ptr
   },
   FreeString: {

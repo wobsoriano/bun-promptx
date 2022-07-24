@@ -35,7 +35,7 @@ func CreateSelection(jsonData, headerText, footerText *C.char, perPage int) *C.c
 }
 
 //export CreatePrompt
-func CreatePrompt(prompText, echoMode *C.char, required bool, charLimit int) *C.char {
-	result := prompt.Prompt(str(prompText), str(echoMode), required, charLimit)
+func CreatePrompt(prompText, echoMode, validateOkPrefix, validateErrPrefix *C.char, required bool, charLimit int) *C.char {
+	result := prompt.Prompt(str(prompText), str(echoMode), str(validateOkPrefix), str(validateErrPrefix), required, charLimit)
 	return ch(result)
 }

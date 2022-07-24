@@ -5,7 +5,9 @@ import { encode, toString } from './utils'
 export type PromptOptions = {
   charLimit?: number
   required?: boolean
-  echoMode?: 'normal' | 'password' | 'none'
+  echoMode?: 'normal' | 'password' | 'none',
+  validateOkPrefix?: string
+  validateErrPrefix?: string
 }
 
 export type PromptResult = {
@@ -17,6 +19,8 @@ export function createPrompt(prompt: string, options: PromptOptions = {}): Promp
   const returnedPtr = symbols.CreatePrompt(
     ptr(encode(prompt)),
     ptr(encode(options.echoMode || 'normal')),
+    ptr(encode(options.validateOkPrefix || '')),
+    ptr(encode(options.validateErrPrefix || '')),
     options.required ?? true,
     options.charLimit || 0
   )

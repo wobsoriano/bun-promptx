@@ -46,7 +46,7 @@ type Result struct {
 	Error string `json:"error"`
 }
 
-func Prompt(promptText, echoMode string, required bool, charLimit int) string {
+func Prompt(promptText, echoMode, validateOkPrefix, validateErrPrefix string, required bool, charLimit int) string {
 	m := model{input: &prompt.Model{
 		ValidateFunc: prompt.VFNotBlank,
 		Prompt:       promptText,
@@ -66,6 +66,14 @@ func Prompt(promptText, echoMode string, required bool, charLimit int) string {
 		m.input.ValidateFunc = prompt.VFNotBlank
 	} else {
 		m.input.ValidateFunc = prompt.VFDoNothing
+	}
+
+	if validateOkPrefix != "" {
+		m.input.ValidateOkPrefix = validateErrPrefix
+	}
+
+	if validateErrPrefix != "" {
+		m.input.ValidateErrPrefix = validateErrPrefix
 	}
 
 	p := tea.NewProgram(&m)
