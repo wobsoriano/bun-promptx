@@ -35,7 +35,7 @@ console.log(result)
 // { selectedIndex: 2, error: null }
 ```
 
-<img src="https://i.imgur.com/DeTHCdG.gif" alt="promptx demo" />
+<img src="https://i.imgur.com/yE0qKyA.gif" alt="promptx demo" />
 
 ### createPrompt
 
