@@ -10,9 +10,9 @@ bun add bun-promptx
 
 ## Usage
 
-### selection
+### createSelection
 
-A terminal single-selection list library. The `createSelection` function provides the functions of page up and down and key movement, and supports custom rendering methods.
+The `createSelection` function lets you create a terminal single-selection list prompt. It function provides the functions of page up and down and key movement, and supports custom rendering methods.
 
 ```js
 import { createSelection } from 'bun-promptx'
@@ -37,7 +37,21 @@ console.log(result)
 
 <img src="https://i.imgur.com/DeTHCdG.gif" alt="promptx demo" />
 
-More to come...
+### createPrompt
+
+The `createPrompt` function is a terminal input prompt library. It provides CJK character support and standard terminal shortcut keys (such as ctrl+a, ctrl+e), password input echo and other functions.
+
+```js
+import { createPrompt } from 'bun-promptx'
+
+const username = createPrompt("Enter username: ")
+// { value: "wobsoriano", error: null }
+
+const password = createPrompt("Enter password: ", {
+  echoMode: 'password'
+})
+// { value: "123456", error: null }
+```
 
 ## License
 

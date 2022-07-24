@@ -16,12 +16,12 @@ import { createSelection, createPrompt } from './src'
 // })
 
 // console.log(result)
-const result = createPrompt("Enter anything: ")
+const username = createPrompt("Enter username: ")
+// { value: "wobsoriano", error: null }
 
-console.log(result)
-
-const result2 = createPrompt("Enter password: ", {
-  echoMode: 'none'
+const password = createPrompt("Enter password: ", {
+  echoMode: 'password'
 })
+// { value: "123456", error: null }
 
-console.log(result2)
+console.log(username, password)
