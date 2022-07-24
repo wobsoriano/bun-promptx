@@ -17,6 +17,10 @@ export const { symbols } = dlopen(location, {
     args: [FFIType.ptr, FFIType.ptr, FFIType.ptr, FFIType.int],
     returns: FFIType.ptr
   },
+  CreatePrompt: {
+    args: [FFIType.ptr, FFIType.ptr, FFIType.bool, FFIType.int],
+    returns: FFIType.ptr
+  },
   FreeString: {
     args: [FFIType.ptr],
     returns: FFIType.void
@@ -64,6 +68,35 @@ export function createSelection(items: SelectionItem[], options: SelectionOption
   }
   return {
     selectedIndex: Number(selectedIndex),
+    error: null
+  }
+}
+
+export type PromptOptions = {
+  charLimit?: number
+  required?: boolean
+  echoMode?: 'normal' | 'password' | 'none'
+}
+
+export function createPrompt(prompt: string, options: PromptOptions = {}) {
+  const returnedPtr = symbols.CreatePrompt(
+    ptr(encode(prompt)),
+    ptr(encode(options.echoMode || 'normal')),
+    options.required ?? true,
+    options.charLimit || 0
+  )
+  const { value, error } = JSON.parse(toString(returnedPtr)) as {
+    value: string
+    error: string
+  }
+  if (error !== "") {
+    return {
+      value: null,
+      error
+    }
+  }
+  return {
+    value,
     error: null
   }
 }
