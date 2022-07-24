@@ -1,7 +1,16 @@
 import { dlopen, FFIType, ptr, suffix } from 'bun:ffi'
 import { encode, toString } from './utils'
 
-const filename = `../release/promptx-${process.platform}-${process.arch}.${suffix}`
+const { platform, arch } = process
+
+let filename: string
+
+if (platform === 'linux' && arch === 'x64') {
+  filename = `../release/promptx-${platform}-amd64.${suffix}`
+} else {
+  filename = `../release/promptx-${platform}-${arch}.${suffix}`
+}
+
 const location = new URL(filename, import.meta.url).pathname
 export const { symbols } = dlopen(location, {
   CreateSelection: {
