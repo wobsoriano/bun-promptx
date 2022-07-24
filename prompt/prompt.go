@@ -72,7 +72,7 @@ func Prompt(promptText, echoMode string, required bool, charLimit int) string {
 	err := p.Start()
 	if err != nil {
 		result, _ := json.Marshal(&Result{
-			Value: m.Value(),
+			Value: "",
 			Error: fmt.Sprintf("%s", err),
 		})
 		return string(result)

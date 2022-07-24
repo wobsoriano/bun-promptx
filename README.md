@@ -12,7 +12,7 @@ bun add bun-promptx
 
 ### createSelection
 
-The `createSelection` function lets you create a terminal single-selection list prompt. It function provides the functions of page up and down and key movement, and supports custom rendering methods.
+The `createSelection` function lets you create a terminal single-selection list prompt. It provides the functions of page up and down and key movement, and supports custom rendering methods.
 
 ```js
 import { createSelection } from 'bun-promptx'
