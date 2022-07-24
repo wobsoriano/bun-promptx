@@ -11,7 +11,8 @@ const result = createSelection([
   { text: 'perf', description: 'Improving performance' }
 ], {
   headerText: 'Select Commit Type: ',
-  perPage: 5
+  perPage: 5,
+  footerText: 'Footer here'
 })
 
 console.log(result)

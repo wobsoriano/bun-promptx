@@ -79,7 +79,7 @@ type Result struct {
 }
 
 //export CreateSelection
-func CreateSelection(jsonData, headerText *C.char, perPage int) *C.char {
+func CreateSelection(jsonData, headerText, footerText *C.char, perPage int) *C.char {
 	var item []ListItem
 	json.Unmarshal([]byte(str(jsonData)), &item)
 	data := []interface{}{}
@@ -110,7 +110,7 @@ func CreateSelection(jsonData, headerText *C.char, perPage int) *C.char {
 				return common.FontColor(fmt.Sprintf(" %d. %s", gdIndex+1, t.Text), selector.ColorUnSelected)
 			},
 			FooterFunc: func(m selector.Model, obj interface{}, gdIndex int) string {
-				return ""
+				return common.FontColor(str(footerText), selector.ColorFooter)
 			},
 			FinishedFunc: func(s interface{}) string {
 				return ""

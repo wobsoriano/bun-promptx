@@ -14,7 +14,7 @@ if (platform === 'linux' && arch === 'x64') {
 const location = new URL(filename, import.meta.url).pathname
 export const { symbols } = dlopen(location, {
   CreateSelection: {
-    args: [FFIType.ptr, FFIType.ptr, FFIType.int],
+    args: [FFIType.ptr, FFIType.ptr, FFIType.ptr, FFIType.int],
     returns: FFIType.ptr
   },
   FreeString: {
@@ -31,6 +31,7 @@ export type SelectionItem = {
 export type SelectionOptions = {
   perPage?: number
   headerText?: string
+  footerText?: string
 }
 
 export type SelectionReturn = {
@@ -38,10 +39,7 @@ export type SelectionReturn = {
   error: string | null
 }
 
-export function createSelection(items: SelectionItem[], options: SelectionOptions = {
-  perPage: 5,
-  headerText: 'Select an item: '
-}): SelectionReturn {
+export function createSelection(items: SelectionItem[], options: SelectionOptions = {}): SelectionReturn {
   const stringifiedItems = JSON.stringify(items.map((item) => {
     return {
       text: item.text,
@@ -50,8 +48,9 @@ export function createSelection(items: SelectionItem[], options: SelectionOption
   }))
   const returnedPtr = symbols.CreateSelection(
     ptr(encode(stringifiedItems)),
-    ptr(encode(options.headerText)),
-    options.perPage
+    ptr(encode(options.headerText || 'Select an item: ')),
+    ptr(encode(options.footerText || '')),
+    options.perPage || 5
   )
   const { selectedIndex, error } = JSON.parse(toString(returnedPtr)) as {
     selectedIndex: string
