@@ -21,7 +21,8 @@
   },
   "files": [
     "dist",
-    "release"
+    "release",
+    "cleanup.mjs"
   ],
   "keywords": [
     "bun"
