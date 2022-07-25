@@ -16,8 +16,7 @@
     "build": "tsup",
     "build:go": "./build.sh",
     "release": "bumpp --commit --push --tag && npm publish",
-    "prepublishOnly": "bun run build",
-    "test": "bun wiptest"
+    "prepublishOnly": "bun run build"
   },
   "files": [
     "dist",
