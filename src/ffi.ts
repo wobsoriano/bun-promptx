@@ -4,7 +4,7 @@ const { platform, arch } = process
 
 let filename: string
 
-if (platform === 'linux' && arch === 'x64') {
+if (arch === 'x64') {
   filename = `../release/promptx-${platform}-amd64.${suffix}`
 } else {
   filename = `../release/promptx-${platform}-${arch}.${suffix}`
