@@ -7,7 +7,7 @@ const files = fs.readdirSync(path)
 const { platform, arch } = process
 let filename
 
-if (platform === 'linux' && arch === 'x64') {
+if (arch === 'x64') {
   filename = `promptx-${platform}-amd64.${suffix}`
 } else {
   filename = `promptx-${platform}-${arch}.${suffix}`
