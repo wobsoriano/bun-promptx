@@ -1,7 +1,8 @@
 import fs from 'fs'
 import { suffix } from 'bun:ffi'
 
-const files = fs.readdirSync('./release')
+const path = new URL('./release', import.meta.url).pathname
+const files = fs.readdirSync(path)
 
 const { platform, arch } = process
 let filename
